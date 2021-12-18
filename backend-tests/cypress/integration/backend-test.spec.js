@@ -53,6 +53,10 @@ describe('Test suite', function(){
         it("Redigera klient", function(){
             clientHelpers.editClient()
         })
+
+        it("Logga ut", function(){
+            clientHelpers.logOut()
+        })
         
     })
 

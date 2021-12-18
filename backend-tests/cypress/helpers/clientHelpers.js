@@ -118,25 +118,6 @@ const faker = require('faker')
             'Content-Type': 'application/json'
         },
         }).then((response =>{
-            
-                /*const clientData = response.body[response.body.length - 1]
-            clientData.name = "Testnamn"
-            clientData.email = "testnamn@example.com"
-*/
-            cy.request({
-            method: "PUT",
-            url: "http://localhost:3000/api/client/" + clientData.id,
-            headers:{
-                'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
-                'Content-Type': 'application/json'
-            },
-            body:clientData
-            
-        }).then((response =>{
-            const responseString = JSON.stringify(response.body)
-            expect(responseString).to.have.string(clientData.name)
-            expect(responseString).to.have.string(clientData.email)
-        }))
 
         }))
         cy.log(response.body)
@@ -151,5 +132,6 @@ module.exports = {
     createRandomClientPayload,
     createClientRequest,
     deleteClientAfterCreate,
-    editClient
+    editClient,
+    logOut
 }
